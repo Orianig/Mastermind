@@ -1,0 +1,44 @@
+:root {
+    --c-primary-light: #BAE3E3;
+    --c-primary:#1aa1a0;
+    --c-primary-dark: #0F8584;
+    --c-secundary-light:#FAE8C8 ;
+    --c-secundary: #EDB347;
+    --c-secundary-dark: #E08B20;
+    --c-Tertiary-light: #F3D6D8 ;
+    --c-Tertiary: #D7767C;
+    --c-Tertiary-dark:  #C7595F;
+    --c-font: #FBFBFB;
+}
+
+html,
+body {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* FONT FAMILY */
+
+@font-face {
+    /*Squada One*/
+    font-family: 'font-1';
+    src: url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=IBM+Plex+Sans&family=Righteous&display=swap');
+}
+
+@font-face {
+    /*Shadows Into Light Two*/
+    font-family: 'font-2';
+    src: url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=IBM+Plex+Sans&family=Righteous&display=swap');
+}
+
+.font-1 {
+    font-family: 'Crimson Text', serif;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Righteous', cursive;
+}
+
+.font-2 {
+    font-family: 'Crimson Text', serif;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Righteous', cursive;
+}

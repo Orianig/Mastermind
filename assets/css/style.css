@@ -9,18 +9,27 @@
     --c-Tertiary: #D7767C;
     --c-Tertiary-dark: #C7595F;
     --c-font: #FBFBFB;
+    --w-break-point: 768px;
 }
 
 html,
 body {
     font-family: 'Shadows Into Light Two', cursive;
-    font-size: 61px;
+    font-size: 18px;
     margin: 0;
 }
 
 /* FONT FAMILY */
-
-
 .font-1 {
     font-family: 'Squada One', cursive;
+}
+
+.btn {
+    font-family: 'Squada One', cursive;
+    padding: 0.5rem 1rem;
+}
+
+.btn.btn-primary {
+    background-color: var(--c-primary);
+    color: white;
 }

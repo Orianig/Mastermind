@@ -33,3 +33,9 @@ body {
     background-color: var(--c-primary);
     color: white;
 }
+
+.row-ppal {
+    height: 700px;
+    width: 700px;
+    border: 1px solid black;
+}

@@ -45,28 +45,9 @@ if (level) {
     addBalls(numBallsLevel1);
 };
 
-const isValid = () => {
-    let valid = true;
-    if (level === 1 && colorSelectedList.length !== numBallsLevel1) {
-        valid = false;
-    }
-    if (level === 2 && colorSelectedList.length !== numBallsLevel2) {
-        valid = false;
-    }
-    if (level === 3 && colorSelectedList.length !== numBallsLevel3) {
-        valid = false;
-    }
-    const uniqueColors = [...new Set(colorSelectedList)];
-    if (uniqueColors.length !== colorSelectedList.length) {
-        valid = false;
-    }
-    return valid;
-};
+
+
 btnSave.addEventListener("click", () => {
-    if (isValid) {
-        localStorage.setItem('mind-colors', JSON.stringify(colorSelectedList));
-        window.location.href = './board.html';
-    } else {
-        errorMessage.textContent = 'Faltan colores por seleccionar';
-    }
-})
+    localStorage.setItem('mind-colors', JSON.stringify(colorSelectedList));
+    window.location.href = './board.html';
+});

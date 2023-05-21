@@ -22,13 +22,14 @@
 
 .tittle-register {
   font-family: var(--font-family-2);
-  font-size: 5rem;
-  margin-bottom: 0;
+  font-size: 4rem;
+  margin-bottom: 0rem;
+  margin-top: 1rem;
 }
 
 .indications-register {
   font-size: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 /* DROPDOWN - AVATAR */
@@ -36,7 +37,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   position: relative;
 }
 
@@ -97,7 +98,7 @@
   font-family: var(--font-family-2);
   flex-direction: column;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .user-name-form .user-name {
@@ -112,6 +113,6 @@
   cursor:pointer;
   font-family: var(--font-family-2);
   height: 3rem;
-  transform: translateX(14rem) translateY(2rem);
+  transform: translateX(12rem)translatey(1rem);
   width: 7rem;
 }

@@ -1,9 +1,6 @@
 
 // Selectores DOM
 const container = document.querySelector('.balls-container');
-//para mantener la separacion entre las bolas y que se aumente el tamaño del contenedor
-const ballWidth = 70;
-const separation = 10;
 const numBallsLevel1 = 4;
 const numBallsLevel2 = 5;
 const numBallsLevel3 = 6;
@@ -11,8 +8,6 @@ const colorSelectedList = [];
 
 const addBalls = (numBalls) => {
     const totalBalls = numBalls;
-    const containerWidth = totalBalls * (ballWidth + separation);
-    container.style.width = `${containerWidth}px`;
 
     for (let i = 0; i < numBalls; i++) {
         const ball = document.createElement('div');
@@ -25,6 +20,7 @@ const addBalls = (numBalls) => {
             const selectedColor = event.target.value;
             ball.style.backgroundColor = selectedColor;
             colorSelectedList.push(selectedColor);
+            colorPicker.style.transform = `translate(-50%, -50%)`;
         });
     };
 };

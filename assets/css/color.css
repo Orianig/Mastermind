@@ -20,22 +20,21 @@
     width: 80%;
 }
 
-.text-color{
+.text-color {
     font-family: var(--font-family-2);
     font-size: 3rem;
     margin-bottom: 5rem;
-    }
-    
+}
+
 /* BALLS - CONTAINER */
 
 .balls-container {
     align-items: center;
     border: 1px solid black;
     display: flex;
-    height: 100px;
     justify-content: flex-start;
     padding: 10px;
-    transform: translatey( 47px);
+    transform: translatey(47px);
 }
 
 .balls-container .ball {
@@ -64,17 +63,69 @@
 
 .confirm-color {
     align-items: center;
-    border: 1px solid black;
-    border-radius: 2rem 2rem 2rem 2rem;
     cursor: pointer;
-    display: flex;
     font-family: var(--font-family-2);
-    font-size: 1rem;
     height: 3rem;
     justify-content: center;
-    margin-bottom: 11rem;
     text-align: center;
-    transform: translate(14rem, 13rem);
-    width: 8rem;
+    transform: translate(12rem, 10rem);
+    width: 7rem;
+}
 
+@media (max-width: 768px) {
+    .container-general {
+        height: 100vh;
+      }
+      
+      .container-general .table {
+        height: 100%;
+        width: 100%;
+      }
+
+    .text-color {
+        font-size: 2.2rem;
+        margin-top: -7rem;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    /* BALLS - CONTAINER */
+
+    .balls-container {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 80%;
+    }
+
+    .balls-container .ball {
+        border: 1px solid black;
+        border-radius: 50%;
+        cursor: pointer;
+        height: 70px;
+        margin: 0.5rem 0.6rem 0.1rem 0.1rem;
+        overflow: hidden;
+        width: 70px;
+    }
+
+    .balls-container .ball input {
+        border-radius: 100%;
+        cursor: pointer;
+        height: 250%;
+        width: 250%;
+        padding: 0;
+        border: none;
+        outline: 0;
+        margin: 0;
+        transform: translate(-80px, -80px);
+        /* opacity:0; */
+    }
+
+    /* CONFIRM - CLOSE */
+    .confirm-color {
+        height: 2rem;
+        transform: translateX(6rem)translatey(9rem);
+        width: 6rem;
+    }
 }

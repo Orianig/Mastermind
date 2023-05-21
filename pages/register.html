@@ -18,15 +18,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <!-- Alien Font Family -->
+    <link href="https://fonts.cdnfonts.com/css/alien-2" rel="stylesheet">
 </head>
 
 <body>
     <div class="container-general">
         <div class="table">
+            <p class="tittle-register">HUMANO</P>
+            <P class="indications-register"> elige tu AVATAR y escribe tu NOMBRE</p>
             <!-- DROPDOWN - AVATAR -->
             <div class="dropdown">
                 <span class="avatar-image" id="avatar-image"></span>
                 <button class="avatar-button" id="btnAvatar">avatar</button>
+                <!-- AVATAR - IMAGES -->
                 <div id="dropdown-content" class="dropdown-content">
                     <img src="../assets/img/avatar-2.PNG" alt="Avatar 1">
                     <img src="../assets/img/avatar-3.PNG" alt="Avatar 2">
@@ -38,11 +43,12 @@
             <div class="user-name-form">
                 <p><input class="user-name" type="text" name="text" placeholder="Escribe tu nombre" maxlength="15"></p>
                 <button class="confirm-button-userName" id="btnSave">Confirmar</button>
+                <p id="errorMessage" class="errorMessage"></p>
             </div>
         </div>
     </div>
-    <script src="../assets/js/register.js" type="module"></script>
-    
+    <script src="../assets/js/register.js"></script>
+
 </body>
 
 </html>

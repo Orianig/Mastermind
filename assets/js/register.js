@@ -1,8 +1,5 @@
-import { LocalStorage } from "./models.js";
 
-const storage = new LocalStorage();
-let player = storage.getItem('mind-player');
-console.log(player);
+let player = JSON.parse(localStorage.getItem('mind-player'));
 
 if (player) { // quiero que me conserve los datos del jugador al recargar la pagina
     const avatarImage = document.querySelector('.avatar-image');
@@ -14,7 +11,6 @@ if (player) { // quiero que me conserve los datos del jugador al recargar la pag
         avatar: '',
         username: ''
     };
-    console.log(player);
 }
 
 // Selectores DOM
@@ -41,6 +37,15 @@ dropdownImages.forEach((imgAvatar) => {
 btnSave.addEventListener("click", () => {
     const txtUsername = document.querySelector('.user-name');
     player.username = txtUsername.value;
-    storage.setItem('mind-player', player);
-    window.location.href = './board.html';
+    localStorage.setItem('mind-player', JSON.stringify(player));
+    if (player.avatar !== '' && player.username !== '') {
+        localStorage.setItem('mind-player', JSON.stringify(player));
+        window.location.href = './level.html';
+    } else {
+        if (player.avatar === '') {
+            errorMessage.textContent = 'Selecciona tu avatar';
+        } else {
+            errorMessage.textContent = 'Escribe tu nombre';
+        }
+    }
 });

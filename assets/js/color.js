@@ -7,8 +7,6 @@ const numBallsLevel3 = 6;
 const colorSelectedList = [];
 
 const addBalls = (numBalls) => {
-    const totalBalls = numBalls;
-
     for (let i = 0; i < numBalls; i++) {
         const ball = document.createElement('div');
         ball.classList.add('ball');
@@ -40,8 +38,6 @@ if (level) {
 } else {
     addBalls(numBallsLevel1);
 };
-
-
 
 btnSave.addEventListener("click", () => {
     localStorage.setItem('mind-colors', JSON.stringify(colorSelectedList));

@@ -10,6 +10,8 @@
     --c-Tertiary-dark: #C7595F;
     --c-font: #FBFBFB;
     --w-break-point: 768px;
+    --font-family-1: 'Squada One', cursive;
+    --font-family-2: 'Alien', sans-serif;
 }
 
 html,
@@ -19,13 +21,8 @@ body {
     margin: 0;
 }
 
-/* FONT FAMILY */
-.font-1 {
-    font-family: 'Squada One', cursive;
-}
-
 .btn {
-    font-family: 'Squada One', cursive;
+    font-family: var(--font-family-1);
     padding: 0.5rem 1rem;
 }
 

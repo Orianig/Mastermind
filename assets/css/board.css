@@ -109,6 +109,7 @@
 }
 
 .board .row-ppal {
+
     display: flex;
     flex-direction: row;
     height: 2.3rem;
@@ -170,20 +171,12 @@
 /* Third cell */
 
 .board .row-ppal .validation-button {
-    align-items: center;
+    align-self: center;
+    border-radius: 100%;
     display: flex;
+    height: 50%;
     justify-content: center;
-}
 
-
-.board .row-ppal .validation-button .validation {
-    align-items: center;
-    border-radius: 20rem;
-    display: flex;
-    font-size: 10px;
-    height: 1.2rem;
-    justify-content: center;
-    width: 3.4rem;
 }
 
 /* ATTEMPTS REMAINING */

@@ -1,7 +1,9 @@
 /* CONTAINERS */
 
 .container-general {
+
     align-items: center;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,26 +24,29 @@
     width: 80%;
 }
 
+
+
 /* TOP */
 
 .container-general .welcome-table .row-top {
-    align-items: center;
+    align-items: end;
     border: 1px solid black;
     display: flex;
     flex-direction: row;
-    height: 7%;
-    justify-content: space-between;
-    margin-top: .8rem;
+    height: 9%;
+    margin-top: 0rem;
     margin-bottom: .2rem;
     width: 85%;
 }
 
 .row-top .about-creator {
-    background-color: black;
+    background:linear-gradient(142deg, rgba(95,79,244,1) 17%, #191c46 51%);
+    border: none;
     border-radius: 100%;
+    box-shadow: 0px 0px 14px 7px #191c46;
     cursor: pointer;
-    height: 4rem;
-    width: 4rem;
+    height: 3rem;
+    width: 3rem;
 }
 
 /* MIDDLE */
@@ -52,14 +57,35 @@
     display: flex;
     justify-content: center;
     height: 65%;
+    margin-top: -2rem;
     width: 67%;
 }
 
-.row-middle .logo-ppal {
-    background-color: black;
+.logo-container {
+    align-items: end;
+    background-image: url(../img/nebula_-_25047\ \(540p\).gif);
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 100%;
-    height: 25rem;
-    width: 25rem;
+    box-shadow:  2px -6px 26px 0px rgba(179, 178, 178, 0.39);
+    display: flex;
+    height: 26rem;
+    justify-content: center;
+    position: relative;
+    width: 28rem;
+    z-index: 0;
+}
+
+.logo-ppal {
+    background-image: url(../img/logo-background-3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    height: 29rem;
+    width: 29rem;
+    position: absolute;
+    transform: translate(13px, 62px);
+    z-index: 1;
 }
 
 /* BOTTOM */
@@ -74,7 +100,7 @@
 }
 
 /* LEFT */
-.welcome-table .row-bottom .row-bottom-left{
+.welcome-table .row-bottom .row-bottom-left {
     align-items: center;
     border: 1px solid black;
     display: flex;
@@ -86,8 +112,11 @@
 
 .row-bottom .row-bottom-left .play-button {
     align-items: center;
-    border: 1px solid black;
+    background: linear-gradient(218deg, rgba(40,133,148,1) 0%, #32216b 47%);
     border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
+    border: none;
+    box-shadow: 0px 0px 14px 7px #5e49a6;
+    color: rgb(4, 246, 254);
     cursor: pointer;
     display: flex;
     font-family: var(--font-family-1);
@@ -99,7 +128,7 @@
 
 /* RIGHT */
 
-.welcome-table .row-bottom .row-bottom-right{
+.welcome-table .row-bottom .row-bottom-right {
     align-items: end;
     border: 1px solid black;
     display: flex;
@@ -109,24 +138,28 @@
     width: 60%;
 }
 
-.row-bottom-right .instructions-button{
+.row-bottom-right .instructions-button {
     align-items: center;
-    border: 1px solid black;
-    border-radius: 50%;
+    background: linear-gradient(218deg, rgba(59,66,68,1) 0%, #595177 83%);
+    border: none;
+    border-radius: 2rem;
+    box-shadow: inset 5px 4px 10px 1px #81778f;
     cursor: pointer;
     display: flex;
     font-family: var(--font-family-1);
     font-size: 30px;
-    height: 6rem;
+    height: 3.5rem;
     justify-content: center;
     transform: translateX(-2rem);
-    width: 65%;
+    width: 53%;
 }
 
-.row-bottom-right .sound-button{
+.row-bottom-right .sound-button {
     align-items: center;
-    border: 1px solid black;
+    background: linear-gradient(218deg, rgba(59,66,68,1) 0%, #595177 83%);
+    border: none;
     border-radius: 100%;
+    box-shadow:  0px 0px 11px 1px #4b4b4ed6;
     cursor: pointer;
     display: flex;
     height: 3rem;
@@ -163,45 +196,49 @@
         height: 60%;
         width: 85%;
     }
+
     .row-middle .logo-ppal {
         background-color: black;
         border-radius: 100%;
         height: 17rem;
         width: 20rem;
     }
-    
+
     /* BOTTOM */
     .container-general .welcome-table .row-bottom {
         height: 9.5rem;
         width: 19rem;
     }
-/* LEFT */
-.welcome-table .row-bottom .row-bottom-left{
-    height: 6rem;
-}
 
-.row-bottom .row-bottom-left .play-button {
-    font-size: 45px;
-    height: 4rem;
-    width: 75%;
-}
+    /* LEFT */
+    .welcome-table .row-bottom .row-bottom-left {
+        height: 6rem;
+    }
 
-/* RIGHT */
+    .row-bottom .row-bottom-left .play-button {
+        
 
-.welcome-table .row-bottom .row-bottom-right{
-    height: 9rem;
-    width: 60%;
-}
+        font-size: 45px;
+        height: 4rem;
+        width: 75%;
+    }
 
-.row-bottom-right .instructions-button{
-    font-size: 23px;
-    height: 4rem;
-    transform: translateX(-1rem);
-    width: 67%;
-}
+    /* RIGHT */
 
-.row-bottom-right .sound-button{
-    height: 2rem;
-    width: 19%;
-}
+    .welcome-table .row-bottom .row-bottom-right {
+        height: 9rem;
+        width: 60%;
+    }
+
+    .row-bottom-right .instructions-button {
+        font-size: 23px;
+        height: 4rem;
+        transform: translateX(-1rem);
+        width: 67%;
+    }
+
+    .row-bottom-right .sound-button {
+        height: 2rem;
+        width: 19%;
+    }
 }

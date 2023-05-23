@@ -45,7 +45,7 @@ const addRows = (numRows) => {
         const ballsContainer = document.createElement('div');
         ballsContainer.classList.add('color-balls-container');
 
-        const addBalls = (numBalls, rowIndex) => {
+        const addBalls = (numBalls) => {
             for (let k = 0; k < numBalls; k++) {
                 const ball = document.createElement('div');
                 ball.classList.add('ball');
@@ -54,12 +54,12 @@ const addRows = (numRows) => {
                 ball.addEventListener("click", () => {
                     if (rowColorIndexList[k] < numBalls - 1) {
                         rowColorIndexList[k]++;
-                        //si me alcanza el ultimo color disponible vuelve a la posicion 0
+                 //si me alcanza el ultimo color disponible vuelve a la posicion 0
                     } else {
                         rowColorIndexList[k] = 0;
                     }
                     console.log(colorballs[rowColorIndexList[k]]);
-                    //   índice para acceder al color específico en la matriz colorballs    
+               //   índice para acceder al color específico en la matriz colorballs    
                     ball.style.backgroundColor = colorballs[rowColorIndexList[k]];
                 });
             }
@@ -71,41 +71,28 @@ const addRows = (numRows) => {
         row.appendChild(ballsContainer);
 
         const validation = document.createElement('button');
-        validation.addEventListener("click", () => {
+        row.appendChild(validation);
+        validation.classList.add('validation-button');
 
-            const rowIndex = Array.from(rowBoard.children).indexOf(row);
-            const rowData = rowColorIndexList[rowIndex].map(index => colorballs[index]);
-            console.log(rowData);
-
-            // Habilitar la siguiente fila
-            if (rowIndex < rowBoard.children.length - 1) {
-                const nextRow = rowBoard.children[rowIndex + 1];
-                const nextRowBalls = nextRow.querySelectorAll('.ball');
-                nextRowBalls.forEach(ball => {
-                    ball.classList.remove('disabled');
-                    ball.removeAttribute('disabled');
-
-                    row.appendChild(validation);
-
-                    rowBoard.appendChild(row);
-                }
+        rowBoard.appendChild(row);
+    }
 };
-            if (level) {
-                addRows(selectedRow);
-            };
+if (level) {
+    addRows(selectedRow);
+};
 
-            const addBallsPlayer = (numBalls) => {
-                for (let i = 0; i < numBalls; i++) {
-                    const ballPlayer = document.createElement('div');
-                    ballPlayer.classList.add('ballPlayer');
-                    ballPlayer.style.backgroundColor = colorballs[i];
-                    containerPlayer.appendChild(ballPlayer);
-                }
-            }
+const addBallsPlayer = (numBalls) => {
+    for (let i = 0; i < numBalls; i++) {
+        const ballPlayer = document.createElement('div');
+        ballPlayer.classList.add('ballPlayer');
+        ballPlayer.style.backgroundColor = colorballs[i];
+        containerPlayer.appendChild(ballPlayer);
+    }
+}
 
-            if (level) {
-                addBallsPlayer(selectedCol);
-            };
+if (level) {
+    addBallsPlayer(selectedCol);
+};
 
 
 

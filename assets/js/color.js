@@ -1,10 +1,12 @@
 
 // Selectores DOM
 const container = document.querySelector('.balls-container');
-const numBallsLevel1 = 4;
-const numBallsLevel2 = 5;
-const numBallsLevel3 = 6;
-const colorSelectedList = [];
+const numBallsDictionary = {
+    1: 4,
+    2: 5,
+    3: 6
+}
+let colorSelectedList = [];
 
 const addBalls = (numBalls) => {
     for (let i = 0; i < numBalls; i++) {
@@ -17,7 +19,8 @@ const addBalls = (numBalls) => {
         colorPicker.addEventListener('change', (event) => {
             const selectedColor = event.target.value;
             ball.style.backgroundColor = selectedColor;
-            colorSelectedList.push(selectedColor);
+            colorSelectedList[i] = selectedColor;
+            console.log(colorSelectedList);
         });
     };
 };
@@ -25,20 +28,18 @@ const addBalls = (numBalls) => {
 // Defino la cantidad de bolas que van a aparecer en mi pantalla
 let level = parseInt(localStorage.getItem('mind-level'));
 if (level) {
-    if (level === 1) {
-        addBalls(numBallsLevel1);
-    }
-    if (level === 2) {
-        addBalls(numBallsLevel2);
-    }
-    if (level === 3) {
-        addBalls(numBallsLevel3);
-    }
-} else {
-    addBalls(numBallsLevel1);
+    colorSelectedList = new Array(numBallsDictionary[level])
+    addBalls(numBallsDictionary[level]);
 };
 
 btnSave.addEventListener("click", () => {
+    const isValid = colorSelectedList.filter(color => {
+        return color
+    }).length == numBallsDictionary[level]
+    if (!isValid) {
+        alert('Debes seleccionar todos los colores');
+        return;
+    }
     localStorage.setItem('mind-colors', JSON.stringify(colorSelectedList));
     window.location.href = './board.html';
 });

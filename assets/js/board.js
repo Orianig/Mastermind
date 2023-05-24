@@ -8,12 +8,12 @@ let colorballs = JSON.parse(localStorage.getItem('mind-colors'));
 const containerPlayer = document.querySelector('.color-balls-container-player');
 const rowBoard = document.querySelector('.board');
 
+// cantidad a la que equivalen las columnas, filas y puntos segun el nivel que venga
 const numColumsDictionary = {
     1: 4,
     2: 5,
     3: 6
 }
-
 const numRowDictionary = {
     1: 10,
     2: 8,
@@ -24,64 +24,90 @@ const numRowDictionary = {
 const selectedRow = numRowDictionary[level]
 const selectedCol = numColumsDictionary[level]
 
-//seguimiento del índice del color seleccionado para cada bola
-const rowColorIndexList = [];
+// Generador de la jugada ganadora
+const secretColorList = (colorList) => {
+    let secretColors = [];
 
-const addRows = (numRows) => {
+    for (let i = 0; i < colorList.length; i++) {
+        let randomPosition = Math.floor(Math.random() * colorList.length);
+        secretColors.push(colorList[randomPosition]);
+    }
+
+    console.log(colorList, "estos son los colores posibles...");
+    console.log(secretColors, "estos son los colores ganadores....");
+    return secretColors;
+};
+
+const secretColorsResult = secretColorList(colorballs);
+localStorage.setItem('winnerColors', JSON.stringify(secretColorsResult));
+
+
+
+//generador de cada una de las filas que me venganpor nivel asignado
+const generateRows = (numRows) => {
     for (let i = 0; i < numRows; i++) {
-        const row = document.createElement('div');
-        row.classList.add('row-ppal');
+        const rowContainer = document.createElement('div');
+        rowContainer.classList.add('row-ppal');
 
-        const points = document.createElement('div');
-        points.classList.add('points');
+        //genera el contenedor para los puntos
+        const containerPointScore = document.createElement('div');
+        containerPointScore.classList.add('points');
 
-        for (let j = 0; j < 4; j++) {
-            const ball = document.createElement('span');
-            ball.classList.add('ball');
-            points.appendChild(ball);
+        //genera cada punto
+        const generatePointScore = (numPoints) => {
+            for (let j = 0; j < numPoints; j++) {
+                const pointScore = document.createElement('span');
+                pointScore.classList.add('pointScore');
+                containerPointScore.appendChild(pointScore);
+            }
         }
-        row.appendChild(points);
+        if (level) {
+            generatePointScore(selectedCol);
+        };
+        rowContainer.appendChild(containerPointScore);
 
-        const ballsContainer = document.createElement('div');
-        ballsContainer.classList.add('color-balls-container');
+        // genera el contenedor para las bolas del tablero
+        const columnContainer = document.createElement('div');
+        columnContainer.classList.add('color-balls-container');
 
-        const addBalls = (numBalls) => {
+        //genera cada una de las bolas del tablero
+        const generateColumns = (numBalls) => {
             for (let k = 0; k < numBalls; k++) {
-                const ball = document.createElement('div');
-                ball.classList.add('ball');
-                ballsContainer.appendChild(ball);
+                const colBalls = document.createElement('div');
+                colBalls.classList.add('ball');
+                columnContainer.appendChild(colBalls);
 
-                ball.addEventListener("click", () => {
+                //asignacion del color de cada bola
+                colBalls.addEventListener("click", () => {
                     if (rowColorIndexList[k] < numBalls - 1) {
                         rowColorIndexList[k]++;
-                 //si me alcanza el ultimo color disponible vuelve a la posicion 0
+                        //si me alcanza el ultimo color disponible vuelve a la posicion 0
                     } else {
                         rowColorIndexList[k] = 0;
                     }
                     console.log(colorballs[rowColorIndexList[k]]);
-               //   índice para acceder al color específico en la matriz colorballs    
-                    ball.style.backgroundColor = colorballs[rowColorIndexList[k]];
+                    //   índice para acceder al color específico en la matriz colorballs    
+                    colBalls.style.backgroundColor = colorballs[rowColorIndexList[k]];
                 });
             }
         };
         if (level) {
-            rowColorIndexList[i] = new Array(selectedCol).fill(-1);
-            addBalls(selectedCol);
+            generateColumns(selectedCol);
         };
-        row.appendChild(ballsContainer);
+        rowContainer.appendChild(columnContainer);
 
         const validation = document.createElement('button');
-        row.appendChild(validation);
         validation.classList.add('validation-button');
+        rowContainer.appendChild(validation);
 
-        rowBoard.appendChild(row);
+        rowBoard.appendChild(rowContainer);
     }
 };
 if (level) {
-    addRows(selectedRow);
+    generateRows(selectedRow);
 };
 
-const addBallsPlayer = (numBalls) => {
+const generateColsBallsPlayer = (numBalls) => {
     for (let i = 0; i < numBalls; i++) {
         const ballPlayer = document.createElement('div');
         ballPlayer.classList.add('ballPlayer');
@@ -89,9 +115,8 @@ const addBallsPlayer = (numBalls) => {
         containerPlayer.appendChild(ballPlayer);
     }
 }
-
 if (level) {
-    addBallsPlayer(selectedCol);
+    generateColsBallsPlayer(selectedCol);
 };
 
 

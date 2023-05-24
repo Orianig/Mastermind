@@ -1,59 +1,67 @@
 const rowBoard = document.querySelector('.board');
-const colorList = ['red', 'blue', 'pink','green','yellow'];
+const colorList = ['red', 'blue', 'pink', 'green', 'yellow'];
 const selectedRow = 2;
 const selectedCol = 3;
 // random
-const secretColorList = ['red', 'blue', 'red','green','yellow']
-
-// 
-const matrizInicial = [[-1, -1, -1]]
-const userColorList = [['red', 'pink', 'yellow','red','red']]
-const scoreList = []
 
 
-// matriz[0] = [0, -1];
-// scoreList[0] = calculatePoints(matriz[0]);
+//Comprobacion de fichas blancas y negras
 
-const calculatePoints = () => {
-    const secretColorList = ['red', 'blue', 'red','green','yellow']
-    const userColorList = [['red', 'pink', 'yellow','red','red']]
-    const resultado = [];
-    
-    for (let i = 0; i < userColorList.length; i++) {
-      const userColors = userColorList[i];
-      const coincidenciasExactas = [];
-      const coincidenciasPorTipo = [];
-    
-      for (let j = 0; j < userColors.length; j++) {
-        const userColor = userColors[j];
-        const secretColor = secretColorList[j];
-    
-        if (userColor === secretColor) {
-          coincidenciasExactas.push(userColor);
-        } else if (secretColorList.includes(userColor)) {
-          coincidenciasPorTipo.push(userColor);
+const secretColorList = ['pink', 'blue', 'red', 'green', 'yellow'];
+const userColorList = ['red', 'blue', 'yellow', 'red', 'red'];
+
+const calculateMatches = (secretColors, userColors) => {
+    const matches = [];
+
+    for (let i = 0; i < userColors.length; i++) {
+        const userColor = userColors[i];
+        let match = '';
+
+        // Verificar coincidencia exacta
+        if (userColor === secretColors[i]) {
+            match = 'negro';
+            secretColors[i] = null; // Marcar el color como usado en secretColors
+        } else {
+            // Verificar coincidencia por tipo
+            const index = secretColors.findIndex((color) => color === userColor);
+            if (index !== -1) {
+                match = 'blanco';
+                secretColors[index] = null; // Marcar el color como usado en secretColors
+            }
         }
-      }
-    
-      resultado.push({
-        coincidenciasExactas,
-        coincidenciasPorTipo,
-      });
+
+        matches.push(match);
     }
-    
-    console.log(resultado); // Muestra el resultado por consola
-    
-    const nuevoArray = resultado.map((objeto) => {
-      return {
-        coincidenciasExactas: objeto.coincidenciasExactas.join(', '),
-        coincidenciasPorTipo: objeto.coincidenciasPorTipo.join(', '),
-      };
-    });
-    
- 
-    console.log(nuevoArray);
-}
-calculatePoints(userColorList);
+
+    return matches;
+};
+
+const result = calculateMatches(secretColorList, userColorList);
+console.log(result);
+
+//Funcion que genera la combinación ganadora.
+const secretColorList = () => {
+    let colorList = [
+
+    ];
+
+    for (let i = 0; i < colorList.length; i++) {
+        let randomPosition = Math.floor(Math.random() * colorList.length);
+
+        secretColorList.push(colorList[randomPosition]);
+    }
+
+    console.log(colorList, "estos son los colores posibles...")
+    console.log(secretColorList, "estos son los colores ganadores....")
+};
+
+secretColorList();
+
+
+
+
+
+
 
 
 // const calculatePoints = matrizPropuesta.map((valor, indice) => {
@@ -92,9 +100,24 @@ const addRows = (numRows) => {
                 const ball = document.createElement('div');
                 ball.classList.add('ball');
                 row.appendChild(ball);
+                //asignacion del color de cada bola
+                ball.addEventListener("click", () => {
+                    if (rowColorIndexList[k] < numBalls - 1) {
+                        rowColorIndexList[k]++;
+                        //si me alcanza el ultimo color disponible vuelve a la posicion 0
+                    } else {
+                        rowColorIndexList[k] = 0;
+                    }
+                    console.log(colorballs[rowColorIndexList[k]]);
+                    //   índice para acceder al color específico en la matriz colorballs    
+                    ball.style.backgroundColor = colorballs[rowColorIndexList[k]];
+                });
             }
         };
-        addColumns(selectedCol);
+        if (level) {
+            generateColumns(selectedCol);
+        };
+        row.appendChild(columnContainer);
 
         const validation = document.createElement('button');
         row.appendChild(validation);
@@ -103,7 +126,20 @@ const addRows = (numRows) => {
         rowBoard.appendChild(row);
     }
 };
+if (level) {
+    addRows(selectedRow);
+};
 
-addRows(selectedRow);
+const addBallsPlayer = (numBalls) => {
+    for (let i = 0; i < numBalls; i++) {
+        const ballPlayer = document.createElement('div');
+        ballPlayer.classList.add('ballPlayer');
+        ballPlayer.style.backgroundColor = colorballs[i];
+        containerPlayer.appendChild(ballPlayer);
+    }
+}
 
+if (level) {
+    addBallsPlayer(selectedCol);
+};
 

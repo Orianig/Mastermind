@@ -120,16 +120,16 @@
 /* First cell */
 
 .board .row-ppal .points {
-    display: grid;
-    gap: 0.25rem;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    border: 1px solid black;
+    display: flex;
     width: 2.2rem;
 }
 
-.board .row-ppal .points .ball {
+.board .row-ppal .points .pointScore {
     background-color: black;
     border-radius: 100%;
+    height: 2rem;
+    width: 2rem;
 }
 
 /* Second cell  */
@@ -143,11 +143,11 @@
     padding: 3px;
 }
 
-.table .row-bottom .color-balls-container-player{
+.table .row-bottom .color-balls-container-player {
     border: 1px solid black;
 }
 
-.board .row-ppal .color-balls-container .ball{
+.board .row-ppal .color-balls-container .ball {
     border: 1px solid black;
     border-radius: 50%;
     cursor: pointer;

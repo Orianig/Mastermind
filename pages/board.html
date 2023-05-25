@@ -18,39 +18,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
     <div class="container-general">
-        <div class="table">
+        <div id="table" class="table">
             <!-- INFORMATION BAR -->
             <div class="row-top">
                 <div class="col-left">
-                    <span class="avatar-img"></span>
-                    <span class="user-name"></span>
+                    <span id="avatar-img" class="avatar-img"></span>
+                    <span id="user-name" class="user-name"></span>
                 </div>
                 <div class="col-right">
-                    <span class="button-close">X</span>
+                    <input type="button" class="button-close" id="open" value="X"></input>
+                    <div id="popup">
+                        <div class="content-pop">
+                            <div> <a href="#" id="close">X</a></div>
+                            Soy un POP UP
+                        </div>
+                    </div>
                     <span class="button-istructions">i</span>
                 </div>
             </div>
             <!-- Board -->
-            <div class="board">
+            <div id="board" class="board">
                 <!--ROW -->
-                <!-- <div class="row-ppal">
-                    <div class="points">
-                        <span class="ball"></span>
-                        <span class="ball"></span>
-                        <span class="ball"></span>
-                        <span class="ball"></span>
-                    </div>
-                    <div class="color-balls-container">
-                    </div>
-                    <div class="validation-button">
-                        <button class="validation">JUGAR!</button>
-                    </div>
-                </div> -->
-
             </div>
             <!-- ATTEMPTS REMAINING -->
             <div class="row-attempts">
@@ -58,9 +52,10 @@
             </div>
             <!-- AVAILABLE COLORS -->
             <div class="row-bottom">
-                <div class="color-balls-container-player">
+                <div id="color-balls-container-player" class="color-balls-container-player">
                 </div>
             </div>
+            <p id="errorMessage" class="errorMessage"></p>
         </div>
     </div>
 

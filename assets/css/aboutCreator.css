@@ -1,0 +1,100 @@
+
+body {
+    background: radial-gradient(circle, rgba(74, 80, 80, 1) 0%, rgba(18, 18, 18, 1) 11%, rgba(3, 3, 3, 1) 71%, rgb(26, 25, 26) 98%);
+    margin: 0;
+    font-size: 18px;
+}
+
+/* CONTAINERS */
+.container-general {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 980px;
+}
+
+/* SHADOWS */
+.square {
+    align-items: center;
+    background-color: rgb(14, 14, 14);
+    border-radius: 2rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 70%;
+}
+
+.square::after {
+    background: #fc00ff;
+    background-image: linear-gradient(to top, #fc00ff, #00dbde);
+    content: '';
+    filter: blur(10px);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: -1;
+}
+
+.row-top {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+/* TEXT */
+.row-top .tittleCreator {
+    background: #B611CF;
+    background: linear-gradient(to right, #B611CF 0%, #44B3CF 75%);
+    text-align: justify;
+    font-family: 'Alien', sans-serif;
+    font-size: 3rem;
+    margin: 0rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.row-top p {
+    background: #B611CF;
+    background: linear-gradient(to right, #B611CF 0%, #44B3CF 75%);
+    font-family: 'Shadows Into Light Two', cursive;
+    margin: 0.5rem;
+    text-align: justify;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.row-bottom {
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: end;
+    margin-bottom: 1.8rem;
+    margin-top: 1.5rem;
+    width: 90%;
+}
+
+.row-bottom .return-home {
+    background: linear-gradient(142deg, rgba(95, 79, 244, 1) 17%, #191c46 51%);
+    border: none;
+    border-radius: 20rem 9rem 2rem 7rem;
+    box-shadow: 0rem 0rem 12px 2px #5e5ebf;
+    color: #8181e9;
+    cursor: pointer;
+    font-family: 'Squada One', cursive;
+    font-size: 2rem;
+    height: 3rem;
+    width: 8rem;
+}
+
+.row-bottom .return-home:hover {
+    background: #191c46;
+    box-shadow: 0px 0px 12px 5px #5b5f98;
+}

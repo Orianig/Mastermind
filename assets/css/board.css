@@ -226,6 +226,7 @@
     transform: translateX(-3rem)translatey(-2rem);
 }
 
+
 @media (max-width: 768px) {
     .container-general {
         height: 100vh;

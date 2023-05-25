@@ -53,8 +53,9 @@
     width: 20px;
 }
 
-.play-again,
-.return-home {
+.play-same,
+.return-home,
+.change-level {
     align-items: center;
     background: linear-gradient(218deg, rgba(40, 133, 148, 1) 0%, #32216b 47%);
     border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
@@ -70,8 +71,9 @@
     width: 70%;
 }
 
-.play-again:hover,
-.return-home:hover {
+.play-same:hover,
+.return-home:hover,
+.change-level:hover {
     background: rgba(40, 133, 148, 1);
     box-shadow: 0px 0px 14px 7px rgb(81, 180, 196);
 }

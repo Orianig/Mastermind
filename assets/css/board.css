@@ -53,10 +53,11 @@
 
 /* INFORMATION BAR-ITEMS */
 .row-top .col-left .avatar-img {
-    background-color: black;
+    background-repeat: no-repeat;
+    background-size: contain;
     border-radius: 100%;
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 4rem;
+    width: 4rem;
 }
 
 .row-top .col-left .user-name {
@@ -72,7 +73,28 @@
     width: 12rem;
 }
 
-.row-top .col-right .button-close {
+#popup {
+    border: 1px solid black;
+    display: none;
+    height: 1.5rem;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 30%;
+    z-index: 2;
+}
+
+.content-pop {
+    margin: 0px auto;
+    margin-top: 100px;
+    position: relative;
+    padding: 10px;
+    width: 500px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.button-close {
     border: 1px solid black;
     border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
     font-size: 14px;
@@ -199,8 +221,10 @@
     width: 20rem;
 }
 
-
-
+.errorMessage {
+    font-size: .7rem;
+    transform: translateX(-3rem)translatey(-2rem);
+}
 
 @media (max-width: 768px) {
     .container-general {

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Podras salvarnos??</title>
     <!-- CSS -->
-       <link href="../assets/css/instructions.css" rel="stylesheet">
+    <link href="../assets/css/instructions.css" rel="stylesheet">
     <!-- FONT FAMILY -->
     <!-- Squada One -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,21 +20,25 @@
     <!-- Alien Font Family -->
     <link href="https://fonts.cdnfonts.com/css/alien-2" rel="stylesheet">
 </head>
+
 <body>
     <div class="container-general">
-            <div class="square">
-                <div class="row-top">
-                    <span class="tittleCreator"> INSTRUCCIONES </span>
-                    <img class="aboutImage" src="../assets/img/instrucciones-web (2).png" alt="Botón de sonido">
-                    
-                </div>
-                <div class="row-bottom">
-                    <div class="button-game">
-                        <a href="../index.html">
-                            <button id="btnReturnHome" class="return-home">Volver?</button>
-                        </a>
-                    </div>
+        <div class="square">
+            <div class="row-top">
+                <span class="tittleCreator"> INSTRUCCIONES </span>
+                <picture>
+                    <source class="aboutImage" srcset="../assets/img/instrucciones-web.png" media="(min-width: 769px)">
+                    <source class="aboutImage" srcset="../assets/img/instrucciones-movil.png"
+                        media="(max-width: 768px)">
+                </picture>
+            </div>
+            <div class="row-bottom">
+                <div class="button-game">
+                    <a href="../index.html">
+                        <button id="btnReturnHome" class="return-home">Volver?</button>
+                    </a>
                 </div>
             </div>
+        </div>
     </div>
 </body>

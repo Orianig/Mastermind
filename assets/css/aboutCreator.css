@@ -1,4 +1,3 @@
-
 body {
     background: radial-gradient(circle, rgba(74, 80, 80, 1) 0%, rgba(18, 18, 18, 1) 11%, rgba(3, 3, 3, 1) 71%, rgb(26, 25, 26) 98%);
     margin: 0;
@@ -97,4 +96,44 @@ body {
 .row-bottom .return-home:hover {
     background: #191c46;
     box-shadow: 0px 0px 12px 5px #5b5f98;
+}
+
+@media (max-width: 768px) {
+
+    /* SHADOWS */
+    .square {
+        background-color: rgb(14, 14, 14);
+        border-radius: 2rem 2rem 2rem 2rem;
+        width: 85%;
+    }
+
+    .row-top {
+        width: 90%;
+    }
+
+    /* TEXT */
+    .row-top .tittleCreator {
+        font-size: 2rem;
+        margin: 0rem;
+        margin-bottom: .3rem;
+        margin-top: .4rem;
+    }
+
+    .row-top p {
+        font-size: .8rem;
+        margin: 0.5rem;
+    }
+
+    .row-bottom {
+        margin-bottom: 0.4rem;
+        margin-top: -0.9rem;
+        width: 90%;
+    }
+
+    .row-bottom .return-home {
+        border-radius: 20rem 13rem 9rem 9rem;
+        font-size: 1.2rem;
+        height: 2rem;
+        width: 5rem;
+    }
 }

@@ -28,7 +28,9 @@
             <!-- TOP -->
             <div class="row-top">
                 <a href="./pages/aboutCreator.html">
-                    <button class="about-creator"></button></a>
+                    <button class="about-creator">
+                        <img class="aboutImage" src="./assets/img/about-icon.png" alt="tres rayas">
+                    </button></a>
             </div>
             <!-- MIDDLE -->
             <div class="row-middle">
@@ -43,8 +45,12 @@
                 </div>
                 <div class="row-bottom-right">
                     <a href="./pages/instructions.html">
-                        <button class="instructions-button">Como se juega?</button></a>
-                    <button class="sound-button"></button>
+                        <button class="instructions-button">Como se juega?</button>
+                    </a>
+                    <audio id="audioPlayer" src="/assets/sound/creepy-ambient.mp3" loop></audio>
+                    <button id="sound-button" class="sound-button">
+                        <img id="soundImage" class="soundImage" src="./assets/img/sound-on.png" alt="Botón de sonido">
+                    </button>
                 </div>
             </div>
         </div>

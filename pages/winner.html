@@ -8,7 +8,7 @@
     <title>Podras salvarnos??</title>
     <!-- CSS -->
     <link href="../assets/css/style.css" rel="stylesheet">
-    <link href="../assets/css/board.css" rel="stylesheet">
+    <link href="../assets/css/winner.css" rel="stylesheet">
     <!-- FONT FAMILY -->
     <!-- Squada One -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,14 +18,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+
 </head>
 
 <body>
+    <div class="container-general">
+        <div class="table">
+            <p class="tittleWinner"> HAZ GANADO </p>
+            <p class="subTittleWinner"> Felicitaciones!! </p>
+            <div class="ballsWinnerColors"></div>
+            <div class="buttons-game">
+                <button id="btnPlayAgain" class="play-again">Juega otra vez</button>
+                <button id="btnReturnHome" class="return-home">Volver al Inicio</button>
+            </div>
+        </div>
+    </div>
 
-    <div class="board"></div>
-
-
-    <script src="../assets/js/player.js"></script>
+    <script src="../assets/js/winner.js"></script>
 </body>
 
 </html>

@@ -27,12 +27,12 @@ body {
 
 .tittle-register {
   background: linear-gradient(to right, #1E378A 0%, #30CFB4 75%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   font-family: 'Alien', sans-serif;
   font-size: 4rem;
   margin-bottom: 0rem;
   margin-top: 1rem;
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .indications-register {
@@ -163,13 +163,14 @@ body {
 }
 
 .user-name-form .user-name {
-  background-color: #2b2d46;
+  background-color: #464863;
   border-radius: 2rem 2rem 2rem 2rem;
   border: none;
+  box-shadow: inset 6px 3px 9px -1px #6ed2f4;
   font-family: 'Alien', sans-serif;
   height: 2rem;
   text-align: center;
-  width: 20rem;
+  width: 14rem;
 }
 
 .user-name-form .user-name:focus {
@@ -186,11 +187,11 @@ body {
   box-shadow: 0px 0px 10px 3px #5e49a6;
   color: rgb(4, 246, 254);
   cursor: pointer;
-  font-family: 'Squada One', cursive;
-  font-size: 2rem;
-  height: 3.5rem;
-  width: 45%;
-  transform: translate(11rem);
+  font-family: 'Alien', sans-serif;
+  font-size: 1.3rem;
+  height: 2.8rem;
+  width: 9rem;
+  transform: translate(15rem);
 }
 
 .user-name-form .confirm-button-userName:hover {
@@ -282,10 +283,11 @@ body {
   }
 
   .user-name-form .confirm-button-userName {
-    font-size: 1.3rem;
-    height: 2rem;
+    font-family: 'Alien', sans-serif;
+    font-size: 1rem;
+    height: 2.5rem;
     transform: translateX(6rem)translatey(0rem);
-    width: 6rem;
+    width: 7rem;
   }
 
   .errorMessage {

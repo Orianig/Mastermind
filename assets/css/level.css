@@ -23,9 +23,12 @@
 }
 
 .text-level {
+    background: linear-gradient(to right, #1E378A 0%, #30CFB4 75%);
     font-family: var(--font-family-2);
     font-size: 3rem;
     margin-bottom: 14rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .row-levels {
@@ -34,14 +37,14 @@
     flex-direction: column;
     gap: .5rem;
     justify-content: center;
-    transform:translatey(-9rem);
+    transform: translatey(-9rem);
 }
 
 /* LEVEL - BUTTONS */
 
 .row-levels span {
     align-items: center;
-    border: 1px solid black;
+    color: white;
     cursor: pointer;
     display: flex;
     font-family: var(--font-family-2);
@@ -53,52 +56,95 @@
     width: 27rem;
 }
 
-.row-levels span.active {
-    background: var(--c-primary);
-    color: white;
+.row-levels .level-1 {
+    background: linear-gradient(218deg, rgb(40, 148, 96) 0%, #dfcc51 60%);
+    border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
+    box-shadow: 0px 0px 10px 3px #29872f;
+}
+.row-levels .level-1:hover {
+    background: rgb(108, 255, 111);
+    color:#09240b;
+    box-shadow: 0px 0px 10px 3px #acf7b1;
 }
 
-/* CONFIRM - CLOSE */
-.confirm-level {
-    cursor: pointer;
-    font-family: var(--font-family-2);
-    height: 3rem;
-    transform: translateX(12rem)translatey(6rem);
-    width: 7rem;
+.row-levels .level-2 {
+    background: linear-gradient(218deg, #dfcc51 0%, #eaa321 60%);
+    border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
+    box-shadow: 0px 0px 10px 3px #d68d18;
+}
+.row-levels .level-2:hover {
+    background: rgb(255, 187, 0);
+    color:#7a6008;
+    box-shadow: 0px 0px 10px 3px #f1d083;
 }
 
-@media (max-width: 768px) {
-    .container-general {
-        height: 100vh;
+.row-levels .level-3 {
+    background: linear-gradient(218deg, #eaa321 0%, #952b2b 60%);
+            border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
+            box-shadow: 0px 0px 10px 3px #b43131;
     }
-
-    .container-general .table {
-        height: 100%;
-        width: 100%;
+    .row-levels .level-3:hover {
+        background: rgb(244, 38, 38);
+        color:#4d1414;
+        box-shadow: 0px 0px 10px 3px #ca3c3c;
     }
-
-    .text-level {
-        font-size: 2rem;
-        margin-top: -7rem;
-        margin-bottom: 3rem;
-    }
-    .row-levels {
-        gap: .5rem;
-        transform:translatey(2rem);
-    }
-
-    /* LEVEL - BUTTONS */
-    .row-levels span {
-        font-size: 1.8rem;
-        height: 3rem;
-        margin-bottom: 1rem;
-        width: 15rem;
+    .row-levels span.active {
+        background: var(--c-primary);
+        color: rgb(246, 246, 246);
     }
 
     /* CONFIRM - CLOSE */
     .confirm-level {
-        height: 2rem;
-        transform: translateX(6rem)translatey(5rem);
-        width: 6rem;
+        align-items: center;
+        background: linear-gradient(218deg, rgba(40, 133, 148, 1) 0%, #32216b 47%);
+        border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
+        border: none;
+        box-shadow: 0px 0px 10px 3px #5e49a6;
+        color: rgb(4, 246, 254);
+        cursor: pointer;
+        font-family: var(--font-family-2);
+        font-size: 1.3rem;
+        height: 2.8rem;
+        transform: translateX(12rem)translatey(6rem);
+        width: 9rem;
     }
-}
+
+    .confirm-level:hover {
+        background: rgba(40, 133, 148, 1);
+        box-shadow: 0px 0px 14px 7px rgb(81, 180, 196);
+    }
+
+    @media (max-width: 768px) {
+        .container-general {
+            height: 100vh;
+        }
+        .container-general .table {
+            height: 100%;
+            width: 100%;
+        }
+        .text-level {
+            font-size: 2rem;
+            margin-top: -1rem;
+            margin-bottom: 2rem;
+        }
+
+        .row-levels {
+            transform: translatey(1rem);
+        }
+
+        /* LEVEL - BUTTONS */
+        .row-levels span {
+            font-size: 1.8rem;
+            height: 4rem;
+            margin-bottom: 2rem;
+            width: 15rem;
+        }
+
+        /* CONFIRM - CLOSE */
+        .confirm-level {
+            font-size: 1rem;
+            height: 2.5rem;
+            transform: translate(5rem,1rem);
+            width: 7rem;
+        }
+    }

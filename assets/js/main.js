@@ -5,10 +5,9 @@ btnPlay.addEventListener("click", () => {
     window.location.href = './pages/register.html';
 });
 
-//Elementos DOM
-const audioPlayer = document.getElementById('audioPlayer');
+//selectores DOM
 const toggleSoundButton = document.getElementById('sound-button');
-const soundImage = document.getElementById('soundImage');
+
 
 function toggleSound() {
     if (audioPlayer.paused) {
@@ -20,5 +19,4 @@ function toggleSound() {
     }
 }
 
-// Evento clic del botón para activar/desactivar el sonido y cambiar la imagen
 toggleSoundButton.addEventListener('click', toggleSound);

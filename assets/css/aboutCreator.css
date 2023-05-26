@@ -83,7 +83,7 @@ body {
 .row-bottom .return-home {
     background: linear-gradient(142deg, rgba(95, 79, 244, 1) 17%, #191c46 51%);
     border: none;
-    border-radius: 20rem 9rem 2rem 7rem;
+    border-radius: 4rem 9rem 2rem 7rem;
     box-shadow: 0rem 0rem 12px 2px #5e5ebf;
     color: #8181e9;
     cursor: pointer;
@@ -131,7 +131,6 @@ body {
     }
 
     .row-bottom .return-home {
-        border-radius: 20rem 13rem 9rem 9rem;
         font-size: 1.2rem;
         height: 2rem;
         width: 5rem;

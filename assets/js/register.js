@@ -38,14 +38,25 @@ btnSave.addEventListener("click", () => {
     const txtUsername = document.querySelector('.user-name');
     player.username = txtUsername.value;
     localStorage.setItem('mind-player', JSON.stringify(player));
+
     if (player.avatar !== '' && player.username !== '') {
         localStorage.setItem('mind-player', JSON.stringify(player));
         window.location.href = './level.html';
     } else {
         if (player.avatar === '') {
-            errorMessage.textContent = 'Selecciona tu avatar';
+            showError("Selecciona tu avatar", 5000);
         } else {
-            errorMessage.textContent = 'Escribe tu nombre';
+            showError("Escribe tu nombre", 5000);
         }
     }
 });
+
+const showError = (message, duration) => {
+    const errorMessage = document.getElementById("errorMessage");
+    errorMessage.textContent = message;
+    errorMessage.style.display = "block";
+
+    setTimeout(() => {
+        errorMessage.style.display = "none";
+    }, duration);
+}

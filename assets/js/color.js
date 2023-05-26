@@ -1,6 +1,6 @@
 
 // Selectores DOM
-const container = document.querySelector('.balls-container');
+const container = document.getElementById('balls-container');
 const numBallsDictionary = {
     1: 4,
     2: 5,
@@ -8,6 +8,7 @@ const numBallsDictionary = {
 }
 let colorSelectedList = [];
 
+//creacion de las bolas de juego
 const addBalls = (numBalls) => {
     for (let i = 0; i < numBalls; i++) {
         const ball = document.createElement('div');
@@ -32,6 +33,7 @@ if (level) {
     addBalls(numBallsDictionary[level]);
 };
 
+//validaciones para poder continuar
 btnSave.addEventListener("click", () => {
     const isValid = colorSelectedList.filter(color => {
         return color

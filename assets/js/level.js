@@ -1,9 +1,9 @@
 let level = parseInt(localStorage.getItem('mind-level'));
 
 // Selectores DOM
-const level1 = document.querySelector('.level-1');
-const level2 = document.querySelector('.level-2');
-const level3 = document.querySelector('.level-3');
+const level1 = document.getElementById('level-1');
+const level2 = document.getElementById('level-2');
+const level3 = document.getElementById('level-3');
 const btnSave = document.getElementById('btnSave');
 
 

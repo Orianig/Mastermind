@@ -1,3 +1,13 @@
+body {
+    background-color: black;
+    background-image: url(../img/istockphoto-1277005028-612x612.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0;
+    font-size: 18px;
+}
+
 /* CONTAINERS */
 
 .container-general {
@@ -13,7 +23,6 @@
 
 .container-general .table {
     align-items: center;
-    border: 1px solid black;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -25,19 +34,17 @@
 /* INFORMATION BAR */
 
 .container-general .table .row-top {
-    border: 1px solid black;
     display: flex;
     flex-direction: row;
     height: 3rem;
     justify-content: space-between;
-    margin-top: .5rem;
+    margin-top: 1rem;
     margin-bottom: .2rem;
     width: 100%;
 }
 
 .row-top .col-left {
     align-items: center;
-    border: 1px solid black;
     display: flex;
     justify-content: start;
     width: 50%;
@@ -45,7 +52,6 @@
 
 .row-top .col-right {
     align-items: flex-end;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -56,25 +62,31 @@
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 100%;
-    height: 4rem;
-    width: 4rem;
+    box-shadow: 1px 3px 6px 1px rgb(41 37 37);
+    height: 6rem;
+    margin-top: 2rem;
+    width: 6rem;
 }
 
 .row-top .col-left .user-name {
     align-items: center;
-    border: 1px solid black;
+    background: linear-gradient(218deg, rgb(48, 26, 67) 0%, #453e4a 63%);
     border-radius: 2rem 2rem 2rem 2rem;
+    box-shadow: 0px 2px 4px 2px rgb(53, 44, 61);
+    color: rgb(217, 186, 231);
     display: flex;
-    font-size: 14px;
-    height: 1.5rem;
+    font-family: 'Alien', sans-serif;
+    font-size: 1rem;
+    height: 2.5rem;
     justify-content: center;
     margin-left: 0.8rem;
-    margin-top: 0.5rem;
-    width: 12rem;
+    margin-top: 1rem;
+    width: 13rem;
 }
 
-#popup {
-    border: 1px solid black;
+/* POPUP  SALIR - INSTRUCCIONES*/
+#popup,
+#popupInf {
     display: none;
     height: 1.5rem;
     left: 0;
@@ -85,74 +97,148 @@
 }
 
 .content-pop {
-    margin: 0px auto;
-    margin-top: 100px;
+    align-items: center;
+    background-color: #2b2f2f;
+    border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
+    box-shadow: 0px 0px 14px 7px rgb(44, 46, 47);
+    color: rgb(57, 215, 229);
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    padding: 1rem;
     position: relative;
-    padding: 10px;
-    width: 500px;
-    background-color: white;
-    border: 1px solid black;
+    transform: translate(32rem, -1rem);
+    width: 17rem;
 }
 
-.button-close {
-    border: 1px solid black;
-    border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
-    font-size: 14px;
-    height: 1.5rem;
+.content-popInf {
+    background-color: #2b2f2f;
+    background-image: url(../img/instrucciones-board.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 9px 5px rgb(44, 46, 47);
+    height: 36rem;
+    margin-top: -1.5rem;
+    padding: 1rem;
+    position: relative;
+    transform: translate(34rem, 2rem);
+    width: 18rem;
+}
+
+.buttoms-popUp {
+    align-items: center;
+    display: flex;
+    margin-top: .3rem;
+}
+
+.tittle-popUp {
+    font-family: 'Squada One', cursive;
+    margin-top: 0rem;
+}
+
+.close-game,
+.change-level,
+.button-close,
+.button-inf {
+    align-items: center;
+    background: linear-gradient(218deg, rgba(40, 133, 148, 1) 0%, #32216b 47%);
+    border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
+    border: none;
+    box-shadow: 0px 0px 10px 3px #5e49a6;
+    color: rgb(4, 246, 254);
+    cursor: pointer;
+    font-family: 'Alien', sans-serif;
+    font-size: 1.8rem;
+    height: 3rem;
     margin-bottom: 0.3rem;
     text-align: center;
-    width: 2rem;
+    width: 4rem;
 }
 
-.row-top .col-right .button-istructions {
-    border: 1px solid black;
-    border-radius: 2rem 2rem 2rem 2rem;
-    font-size: 14px;
-    margin-bottom: 0.5rem;
-    text-align: center;
-    transform: translateX(-1rem);
+.close-game:hover,
+.change-level:hover,
+.button-close:hover,
+.button-inf:hover {
+    background: rgba(40, 133, 148, 1);
+    box-shadow: 0px 0px 8px 3px rgb(81, 180, 196);
+}
+
+.close-game {
+    font-size: .8rem;
+    height: 1.5rem;
+    width: 6rem;
+}
+
+.change-level {
+    font-size: .8rem;
+    height: 1.5rem;
+    margin-left: 1.5rem;
+    width: 8rem;
+}
+
+.button-inf {
+    font-family: 'Squada One', cursive;
+    font-size: 1.2rem;
+    transform: translate(-1rem, 0.5rem);
     width: 4rem;
 }
 
 /*BOARD*/
-
 .container-general .table .board {
     align-items: center;
-    border: 1px solid black;
+    background: rgb(41, 41, 41);
+    background-image: url(../img/geometric-art-gf5009b81b_1280.jpg);
+    background-position: center;
     border-radius: 2rem 2rem 2rem 2rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0.3rem .3rem;
+    margin-top: 3rem;
     padding: 1rem 1rem 0.8rem 1rem;
-    width: 67%;
+    position: relative;
+    width: 80%;
+}
+
+.container-general .table .board::after {
+    background: #fc00ff;
+    background-image: linear-gradient(to right, #8ea6be, #00dbde);
+    content: '';
+    filter: blur(10px);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: -1;
 }
 
 .board .row-ppal {
-    border: 1px solid black;
     display: flex;
     flex-direction: row;
-    height: 2.3rem;
     justify-content: space-around;
-    margin-bottom: .6rem;
+    margin: .5rem;
     width: 100%;
 }
 
 /* First cell */
-
 .board .row-ppal .points {
-    border: 1px solid black;
+    align-items: center;
+    background: rgb(41, 60, 70);
+    box-shadow: 1px 2px 6px 2px rgb(56, 86, 101);
+    border-radius: 1rem;
     display: flex;
-    width: 2.2rem;
+    justify-content: center;
 }
 
 .board .row-ppal .points .pointScore {
-    background-color: #ddd;
-
+    background-color: #222020;
     border-radius: 100%;
-    height: 2rem;
-    width: 2rem;
+    box-shadow: 1px 2px 6px 2px rgb(23, 23, 23);
+    height: 1rem;
+    margin: .2rem;
+    width: 1rem;
 }
 
 /* Second cell  */
@@ -163,69 +249,75 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 3px;
-}
-
-.table .row-bottom .color-balls-container-player {
-    border: 1px solid black;
+    padding: .1rem;
 }
 
 .board .row-ppal .color-balls-container .ball {
-    border: 1px solid black;
-    border-radius: 50%;
+    background-color: #222020;
+    border-radius: 100%;
+    box-shadow: 1px 2px 6px 2px rgb(73, 71, 71);
     cursor: pointer;
-    height: 20px;
-    margin-right: 10px;
-    padding: 0;
-    width: 20px;
+    height: 2.5rem;
+    margin: .4rem;
+    width: 2.5rem;
+}
+
+.table .row-bottom .color-balls-container-player {
+    background-color: #6c7d7d;
+    border-radius: 2rem;
+    box-shadow: 1px 2px 6px 2px rgb(75, 89, 94);
 }
 
 .table .row-bottom .color-balls-container-player .ballPlayer {
-    border: 1px solid black;
-    border-radius: 50%;
+    background-color: #222020;
+    border-radius: 100%;
+    box-shadow: 1px 2px 6px 2px rgb(73, 71, 71);
     cursor: pointer;
-    height: 20px;
-    margin-right: 10px;
-    padding: 0;
-    width: 20px;
+    height: 2rem;
+    margin: .4rem;
+    width: 2rem;
 }
 
 /* Third cell */
 
 .board .row-ppal .validation-button {
-    align-self: center;
-    border-radius: 100%;
-    display: flex;
-    height: 50%;
-    justify-content: center;
-
+    background: rgb(41, 60, 70);
+    box-shadow: 1px 2px 6px 2px rgb(56, 86, 101);
+    border: none;
+    border-radius: 1rem 1rem 1rem 1rem;
+    cursor: pointer;
+    height: 2rem;
+    text-align: center;
+    width: 4rem;
 }
 
-/* ATTEMPTS REMAINING */
-.container-general .table .row-attempts {
-    align-items: center;
-    border: 1px solid black;
-    font-size: 12px;
-    margin-bottom: 0.2rem;
-    text-align: center;
-    width: 20rem;
+.board .row-ppal .validation-button:hover {
+    background: rgba(40, 133, 148, 1);
+    box-shadow: 0px 0px 14px 7px rgb(81, 180, 196);
 }
 
 /* AVAILABLE COLORS */
 
-.container-general .table .row-bottom {
-    align-items: center;
-    display: flex;
-    height: 3rem;
-    justify-content: center;
-    width: 20rem;
-}
-
 .errorMessage {
-    font-size: .7rem;
-    transform: translateX(-3rem)translatey(-2rem);
+    color: white;
+    display: none;
+    font-family: 'Squada One', cursive;
+    font-size: 1.5rem;
+    margin: 0rem;
+    position: absolute;
+    transform: translateX(2rem)translatey(34rem);
 }
 
+#pointScore.pointScore.black {
+    /* Atributos para la clase 'black' */
+    background-color: rgb(172, 43, 212)!important;
+    box-shadow: 0px 0px 5px 2px rgb(130, 63, 139);
+}
+
+#pointScore.pointScore.white {
+    background-color: white;
+    box-shadow: 0px 0px 5px 2px rgb(170, 175, 176);
+}
 
 @media (max-width: 768px) {
     .container-general {

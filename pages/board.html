@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Podras salvarnos??</title>
     <!-- CSS -->
-    <link href="../assets/css/style.css" rel="stylesheet">
     <link href="../assets/css/board.css" rel="stylesheet">
     <!-- FONT FAMILY -->
     <!-- Squada One -->
@@ -37,20 +36,25 @@
                     <input type="button" class="button-close" id="open" value="X"></input>
                     <div id="popup">
                         <div class="content-pop">
-                            <div> <a href="#" id="close">X</a></div>
-                            Soy un POP UP
+                            <p class="tittle-popUp">Quieres abandonar la partida??</p>
+                            <div class="buttoms-popUp"><a href="../index.html">
+                                    <button class="close-game">ABANDONAR</button></a>
+                                <a href="./level.html">
+                                    <button class="change-level">CAMBIAR NIVEL</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <span class="button-istructions">i</span>
+                    <input type="button" class="button-inf" id="open-inf" value="i"></input>
+                    <div id="popupInf">
+                        <div class="content-popInf">
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Board -->
             <div id="board" class="board">
                 <!--ROW -->
-            </div>
-            <!-- ATTEMPTS REMAINING -->
-            <div class="row-attempts">
-                <span class="attempts-remaining">Te quedan XXX intentos</span>
             </div>
             <!-- AVAILABLE COLORS -->
             <div class="row-bottom">

@@ -103,6 +103,7 @@ const generateRows = (numRows) => {
                 const pointScore = document.createElement('span');
                 pointScore.id = 'pointScore';
                 pointScore.classList.add('pointScore');
+                pointScore.classList.add('pointScore');
                 containerPointScore.appendChild(pointScore);
             }
         }
@@ -128,7 +129,7 @@ const generateRows = (numRows) => {
                     //me bloquea el que pueda cambiar los colores de todas las filas
                     //ya que primero debe pasar por la validacion para desbloquearse
                     if (!validationRowList[indexRow]) {
-                        errorMessage.textContent = 'Aún no puedes jugar esta fila!!';
+                        showError("Aún no puedes jugar esta fila!!", 2000);
                         return
                     }
 
@@ -160,17 +161,17 @@ const generateRows = (numRows) => {
             const isCompleteRow = colorMatrix[indexRow].every(item => item >= 0);
             // se condiciona cada columna para que siempre esten rellenas todas las bolas
             if (!isCompleteRow) {
-                errorMessage.textContent = 'Asigna un color a cada bola!!';
+                showError("Asigna un color a cada bola!!", 2000);
                 return;
             }
-//se hace un recorrido para devolver el color en funcion del numero en la matriz
+            //se hace un recorrido para devolver el color en funcion del numero en la matriz
             const colorHexaRowList = colorMatrix[indexRow].map(item => colorballs[item]);
             let matches = calculateMatches(secretColorsList, colorHexaRowList);
-           //elimina los espacios vacios del array
+            //elimina los espacios vacios del array
             matches = matches.filter(item => item);
 
             //pintado de los puntos de pistas en funcion del color que le corresponde
-            let scorePoints = containerPointScore.getElementById('pointScore');
+            let scorePoints = containerPointScore.querySelectorAll('.pointScore');
             for (i = 0; i < scorePoints.length; i++) {
                 const match = matches[i];
                 if (match === 'negro') {
@@ -182,8 +183,8 @@ const generateRows = (numRows) => {
                     scorePoints[i].classList.add('white');
                 }
             }
-//condicion para ganar o para desbloquear la siguiente fila
-            const isWinSet = matches.every(item => item == 'negro');
+            //condicion para ganar o para desbloquear la siguiente fila
+            const isWinSet = matches.length === colorMatrix[indexRow].length && matches.every(item => item == 'negro');
             if (isWinSet) {
                 window.location.href = './winner.html';
                 return;
@@ -217,15 +218,45 @@ if (level) {
     generateBallsPlayer(selectedCol);
 };
 
-//popUp
-$(document).ready(function () {
-    $('#open').on('click', function () {
-        $('#popup').fadeIn('slow');
-    });
+//popUp cerrar ventana
+$(document).ready(() => {
+    let popupVisible = false;
 
-    $('#close').on('click', function () {
-        $('#popup').fadeOut('slow');
+    $('#open').on('click', () => {
+        if (popupVisible) {
+            $('#popup').fadeOut('slow');
+        } else {
+            $('#popup').fadeIn('slow');
+        }
+
+        popupVisible = !popupVisible;
     });
 });
 
+//popUp instrucciones
+$(document).ready(() => {
+    let popupInfVisible = false;
+
+    $('#open-inf').on('click', () => {
+        if (popupInfVisible) {
+            $('#popupInf').fadeOut('slow');
+        } else {
+            $('#popupInf').fadeIn('slow');
+        }
+
+        popupInfVisible = !popupInfVisible;
+    });
+});
+
+//error mensaje
+//error
+const showError = (message, duration) => {
+    const errorMessage = document.getElementById("errorMessage");
+    errorMessage.textContent = message;
+    errorMessage.style.display = "block";
+
+    setTimeout(() => {
+        errorMessage.style.display = "none";
+    }, duration);
+}
 

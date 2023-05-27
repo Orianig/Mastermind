@@ -41,12 +41,12 @@ body {
 
 .balls-container {
     align-items: center;
-    background: rgb(41,41,41);
-background: linear-gradient(0deg, rgba(41,41,41,1) 53%, rgba(134,130,130,1) 84%, rgba(27,26,26,1) 95%);
+    background: rgb(41, 41, 41);
+    background: linear-gradient(0deg, rgba(41, 41, 41, 1) 53%, rgba(134, 130, 130, 1) 84%, rgba(27, 26, 26, 1) 95%);
     border-radius: 2rem 2rem 2rem 2rem;
     display: flex;
     justify-content: center;
-    margin-top: 4rem;
+    margin-top: -6rem;
     position: relative;
 }
 
@@ -97,13 +97,23 @@ background: linear-gradient(0deg, rgba(41,41,41,1) 53%, rgba(134,130,130,1) 84%,
     font-family: 'Alien', sans-serif;
     font-size: 1.3rem;
     height: 3.5rem;
-    transform: translateX(12rem)translatey(7rem);
+    transform: translateX(15rem)translatey(-3rem);
     width: 10rem;
 }
 
 .confirm-color:hover {
     background: rgba(40, 133, 148, 1);
     box-shadow: 0px 0px 14px 7px rgb(81, 180, 196);
+}
+
+.errorMessage {
+    color: white;
+    display: none;
+    font-family: 'Squada One', cursive;
+    font-size: 1.5rem;
+    margin: 0rem;
+    position: absolute;
+    transform: translateX(2rem)translatey(34rem);
 }
 
 @media (max-width: 768px) {
@@ -127,6 +137,7 @@ background: linear-gradient(0deg, rgba(41,41,41,1) 53%, rgba(134,130,130,1) 84%,
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        margin-top: -5rem;
         width: 80%;
     }
 
@@ -153,7 +164,13 @@ background: linear-gradient(0deg, rgba(41,41,41,1) 53%, rgba(134,130,130,1) 84%,
     .confirm-color {
         font-size: 1.2rem;
         height: 2.8rem;
-        transform: translate(6rem,3rem);
+        transform: translate(6rem, -2rem);
         width: 8rem;
+    }
+
+    .errorMessage {
+        font-size: 1rem;
+        transform: translateX(-1rem)translatey(27rem);
+        position: absolute;
     }
 }

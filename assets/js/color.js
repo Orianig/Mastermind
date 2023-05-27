@@ -39,10 +39,20 @@ btnSave.addEventListener("click", () => {
         return color
     }).length == numBallsDictionary[level]
     if (!isValid) {
-        alert('Debes seleccionar todos los colores');
-        return;
+        showError("Selecciona todos los colores", 5000);
+        return
     }
     localStorage.setItem('mind-colors', JSON.stringify(colorSelectedList));
     window.location.href = './board.html';
 });
+//error
+const showError = (message, duration) => {
+    const errorMessage = document.getElementById("errorMessage");
+    errorMessage.textContent = message;
+    errorMessage.style.display = "block";
+
+    setTimeout(() => {
+        errorMessage.style.display = "none";
+    }, duration);
+}
 

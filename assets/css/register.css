@@ -205,7 +205,8 @@ body {
   font-family: 'Squada One', cursive;
   font-size: 1rem;
   margin: 0rem;
-  transform: translateX(-1rem)translatey(-3rem);
+  position: absolute;
+  transform: translateX(15rem)translatey(1rem);
 }
 
 @media (max-width: 768px) {
@@ -292,6 +293,6 @@ body {
 
   .errorMessage {
     font-size: 1rem;
-    transform: translateX(-3rem)translatey(-2rem);
+    transform: translateX(-3rem)translatey(5rem);
   }
 }

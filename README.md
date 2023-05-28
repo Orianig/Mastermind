@@ -10,6 +10,8 @@ Este proyecto es un juego interactivo desarrollado utilizando HTML, CSS y JavaSc
 - JavaScript
 - Animaciones Keyframe
 
+Para este proyecto se ha generado un tablero dinamico que reacciona a la eleccion de los niveles y a los colores elegidos por el usuario; se hace uso del sesion storage para almacenar los datos y por ultimo, tiene un diseño totalmente responsive.
+
 ## Instrucciones del juego
 1. Abre el archivo index.html en tu navegador web preferido.
 2. Introduce tu nombre y avatar

@@ -17,46 +17,39 @@ Este proyecto es un juego interactivo desarrollado utilizando HTML, CSS y JavaSc
 4. Haz clic en los botones de colores para seleccionar los colores con los que deseas jugar
 5. Selecciona sobre las bolas del tablero para ir colocando la combinacion de juego y pulsa el boton de "validar"
 6. El juego te proporcionará pistas sobre la precisión de tu elección:
-- Cada ficha morada significa que tienes un color correcto en la posición correcta.
-- Cada ficha blanca significa que tienes un color correcto, pero en una posición incorrecta.
+    - Cada ficha morada significa que tienes un color correcto en la posición correcta.
+    - Cada ficha blanca significa que tienes un color correcto, pero en una posición incorrecta.
 7. Utiliza las pistas para ajustar tu estrategia y realizar nuevas combinaciones.
 8. Repite los pasos 4-7 hasta que adivines la combinación correcta o alcances el número máximo de intentos permitidos.
+
 ![Instrucciones de juego personalizadas](https://github.com/Orianig/Mastermind/blob/main/assets/img/instrucciones-web.PNG)
 
 ## Estructura del proyecto
-El proyecto se divide en los siguientes archivos:
+El proyecto consta de varias paginas principales necesarias para el desenvolvimiento del juego, estos son:
 
-- index.html: En este caso se caracteriza por ser la pantalla de bienvenida al juego 
-![Bienvenida al mastermind](https://github.com/Orianig/Videoconsola-SteamDeck/blob/3577e417579ca58e8fbc75a6d62e2f1ce2812e2f/imagenes/procesp-creativo.JPG)
-style.css: Este archivo contiene los estilos CSS que dan formato y diseño a los elementos del juego.
-script.js: Aquí se encuentra la lógica principal del juego implementada en JavaScript. Incluye la generación de combinaciones de colores aleatorias, la comparación de las combinaciones del jugador y las pistas proporcionadas.
-Además de estos archivos, también encontrarás una carpeta llamada images que contiene las imágenes utilizadas en el juego, como los botones de colores y las fichas de pistas.
+- index.html: En este caso se caracteriza por ser la pantalla de bienvenida al juego. como nota particular, esta pagina contiene keyframes para generar un sistema de loading. 
 
-![Proceso creativo/ uso/ resultado](https://github.com/Orianig/Videoconsola-SteamDeck/blob/3577e417579ca58e8fbc75a6d62e2f1ce2812e2f/imagenes/procesp-creativo.JPG)
+![Bienvenida al mastermind](https://github.com/Orianig/Mastermind/blob/main/assets/img/index.JPG)
 
-## PROCESO DE ELABORACIÓN
-Para la creación de este proyecto se creo primero la estructura en un archivo html, seguido en un archivo CSS se generaron los estilos de cada uno de los elementos que componen el proyecto, en un tercer proceso se dividio en dos partes los temas utilizados:
-- Dark-Theme
-- Empty-Theme
-Estos contienen las caracteristicas peculares que le corresponden; se realizo la division entre estos archivos con la finalidad de poder realizar un cambio de los temas una vez finalizadas las animaciones correspondientes.
-Posteriormente se creó el archivo Js y otro para las animaciones.
+- home.html:Esta pagina contiene el boton PLAY para inicio del juego y asu vez te redirige a otra dos paginas : instrucciones de juego y about creator. Como nota especial esta pagina es la unica que contiene sonido con la funcionalidad de poder apagarlo, a su vez, es la unica que contiene un gif de fondo.
 
-## RESULTADO FINAL
-![Tema 1: Empty-Theme](https://github.com/Orianig/Videoconsola-SteamDeck/blob/2aadf79b30993593933dd846fd219da6813d55a6/imagenes/final-result1.JPG)
-![Tema 2: Dark-Theme](https://github.com/Orianig/Videoconsola-SteamDeck/blob/2aadf79b30993593933dd846fd219da6813d55a6/imagenes/final-result2.JPG)
+![Inicio al mastermind](https://github.com/Orianig/Mastermind/blob/main/assets/img/home.JPG)
 
+- register.html: En esta pagina el usuario puede acceder a la eleccion del avatar y a personalizar su nombre en el juego. Como notas particulares de esta pagina se tiene el uso de dropdown para la eleccion del avatar y salto de mensajes de error si no se cumplen todos los parametros para avanzar.
 
+![Sistema de registro](https://github.com/Orianig/Mastermind/blob/main/assets/img/register.JPG)
 
+- level.html: En esta pagina el usuario realiza la eleccion del nivel teniendo para elegir entre facil, dificil e intermedio.
 
+![Eleccion del nivel](https://github.com/Orianig/Mastermind/blob/main/assets/img/level.JPG)
 
+- color.html:En esta pagina el usuario realiza la eleccion de los colores de las bolas de juego. Como nota particular, se utiliza la eleccion mediante el uso del color picker, de esta manera se puede customizar totalmente los colores, por otra parte, tambien se establece un mensaje de error si no se completan todos los colores.
 
+![Eleccion del color](https://github.com/Orianig/Mastermind/blob/main/assets/img/colors.JPG)
 
+- board.html: Este es el tablero del juego, aca se traen todos los datos previamente completados y de forma dinamica se genera el tablero en funcion del nivel seleccionado y los colores elegidos. Esta pagina a su vez contiene acceso mediante popUps a las instrucciones del juego y al boton de salida que permite al usuario abandonar la partida. Una vez se gane o pierda se es redirigido a las respectivas paginas de ganador o perdedor que asu vez permiter al usuario seleccionar que hacer a continuacion.
 
-
-
-
-
-
+![Tablero de juego](https://github.com/Orianig/Mastermind/blob/main/assets/img/board.JPG)
 
 License and Copyright
 Add MIT Licence. The style is completely created by Oriana Infante, the images of the about.html page as well as the main logo are taken from the free svg image server.

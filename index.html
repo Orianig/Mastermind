@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Te atreves???</title>
+    <link rel="icon" href="../assets/img/brain-logo-2-removebg-preview.png">
     <!-- CSS -->
-    <link href="./assets/css/style.css" rel="stylesheet">
-    <link href="./assets/css/home.css" rel="stylesheet">
+    <link href="./assets/css/main.css" rel="stylesheet">
     <!-- FONT FAMILY -->
     <!-- Squada One -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,37 +25,22 @@
 <body>
     <div class="container-general">
         <div class="welcome-table">
-            <!-- TOP -->
-            <div class="row-top">
-                <a href="./pages/aboutCreator.html">
-                    <button class="about-creator">
-                        <img class="aboutImage" src="./assets/img/about-icon.png" alt="tres rayas">
-                    </button></a>
-            </div>
-            <!-- MIDDLE -->
-            <div class="row-middle">
-                <div class="logo-container">
-                    <span class="logo-ppal"> </span>
+            <!-- LINEAS DE CARGA IZQUIERDA -->
+            <div id="contenedor">
+                <div class="contenedor-loader-2">
+                    <div class="loader-2"></div>
                 </div>
             </div>
-            <!-- BOTTOM -->
-            <div class="row-bottom">
-                <div class="row-bottom-left">
-                    <button id="play-button" class="play-button">Play</button>
-                </div>
-                <div class="row-bottom-right">
-                    <a href="./pages/instructions.html">
-                        <button class="instructions-button">Como se juega?</button>
-                    </a>
-                    <audio id="audioPlayer" src="/assets/sound/creepy-ambient.mp3" autoplay loop></audio>
-                    <button id="sound-button" class="sound-button">
-                        <img id="soundImage" class="soundImage" src="./assets/img/sound-on.png" alt="Botón de sonido">
-                    </button>
+            <div class="tittle-start">
+                <div class="tittle"> MASTERMIND</div>
+                <a href="./pages/home.html"><button class="btn-start">INICIAR</button></a>
+            </div>
+            <div id="contenedor">
+                <div class="contenedor-loader">
+                    <div class="loader"></div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

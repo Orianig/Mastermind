@@ -2,7 +2,7 @@
 const btnPlay = document.getElementById('play-button');
 
 btnPlay.addEventListener("click", () => {
-    window.location.href = './pages/register.html';
+    window.location.href = './register.html';
 });
 
 //selectores DOM

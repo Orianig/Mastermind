@@ -48,7 +48,7 @@ body {
 }
 
 .image-container {
-    background-image: url(../img/instructions-web.png);
+    background-image: url("../img/instructions-web.png");
     background-repeat: no-repeat;
     background-size: contain;
     height: 35rem;
@@ -107,7 +107,7 @@ body {
     }
 
     .image-container {
-        background-image: url(../img/instructions-web-design.jpg);
+        background-image: url("../img/instructions-movil.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;

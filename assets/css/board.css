@@ -291,7 +291,9 @@ body {
     box-shadow: 1px 2px 6px 2px rgb(56, 86, 101);
     border: none;
     border-radius: 1rem 1rem 1rem 1rem;
+   color: rgb(100, 253, 253);
     cursor: pointer;
+    font-family: 'Shadows Into Light Two', cursive;
     height: 2rem;
     text-align: center;
     width: 4rem;
@@ -473,6 +475,7 @@ margin-top: -3rem;
     /* Third cell */
 
     .board .row-ppal .validation-button {
+        font-size: .7rem;
         height: 1.5rem;
         width: 3.3rem;
     }

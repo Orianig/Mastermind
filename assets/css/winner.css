@@ -1,3 +1,10 @@
+body {
+    background: rgb(26, 25, 26);
+    margin: 0;
+    font-size: 18px;
+}
+
+
 /* CONTAINERS */
 
 .container-general {
@@ -13,7 +20,6 @@
 
 .container-general .table {
     align-items: center;
-    border: 1px solid black;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -23,34 +29,61 @@
 }
 
 .tittleWinner {
-    font-family: var(--font-family-2);
+    background: #B611CF;
+    background: linear-gradient(to right, #B611CF 0%, #44B3CF 75%);
+    font-family: 'Alien', sans-serif;
     font-size: 4rem;
-    margin-bottom: 0rem;
-    margin-top: 1rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .subTittleWinner {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+    background: #B611CF;
+    background: linear-gradient(to right, #B611CF 0%, #44B3CF 75%);
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 2rem;
+    margin-top: -8rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .ballsWinnerColors {
-    border: 1px solid black;
     align-items: center;
+    background: rgb(41, 41, 41);
+    background: linear-gradient(0deg, rgba(41, 41, 41, 1) 53%, rgba(134, 130, 130, 1) 84%, rgba(27, 26, 26, 1) 95%);
+    border-radius: 2rem 2rem 2rem 2rem;
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    padding: 3px;
+    position: relative;
+}
+
+.ballsWinnerColors::after {
+    background: #fc00ff;
+    background-image: linear-gradient(to right, #fc00ff, #00dbde);
+    content: '';
+    filter: blur(10px);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: -1;
 }
 
 .winnerColors {
-    border: 1px solid black;
     border-radius: 50%;
+    box-shadow: 5px 2px 6px 2px rgb(23, 23, 23);
     cursor: pointer;
-    height: 20px;
-    margin-right: 10px;
-    padding: 0;
-    width: 20px;
+    height: 5rem;
+    margin: 1rem;
+    overflow: hidden;
+    width: 5rem;
+}
+
+.buttons-game {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
 }
 
 .play-again,
@@ -63,15 +96,59 @@
     color: rgb(4, 246, 254);
     cursor: pointer;
     display: flex;
-    font-family: var(--font-family-1);
-    font-size: 50px;
-    height: 5rem;
+    font-family: 'Alien', sans-serif;
+    font-size: 2rem;
+    height: 4rem;
+    margin: 1rem;
     justify-content: center;
-    width: 70%;
+    width: 40%;
 }
 
 .play-again:hover,
 .return-home:hover {
     background: rgba(40, 133, 148, 1);
     box-shadow: 0px 0px 14px 7px rgb(81, 180, 196);
+}
+
+@media (max-width: 768px) {
+    .container-general {
+        height: 100vh;
+    }
+
+    .container-general .table {
+        height: 100%;
+        width: 100%;
+    }
+
+    .tittleWinner {
+        font-size: 3rem;
+    }
+
+    .subTittleWinner {
+        font-size: 2rem;
+        margin-top: -8rem;
+    }
+
+    .ballsWinnerColors {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 80%;
+    }
+
+    .winnerColors {
+        height: 4rem;
+        margin: 1rem;
+        overflow: hidden;
+        width: 4rem;
+    }
+
+    .play-again,
+    .return-home {
+        font-size: 1rem;
+        height: 2.5rem;
+        margin: 1rem;
+        width: 35%;
+    }
 }

@@ -27,7 +27,7 @@ const addBalls = (numBalls) => {
 };
 
 // Defino la cantidad de bolas que van a aparecer en mi pantalla
-let level = parseInt(localStorage.getItem('mind-level'));
+let level = parseInt(sessionStorage.getItem('mind-level'));
 if (level) {
     colorSelectedList = new Array(numBallsDictionary[level])
     addBalls(numBallsDictionary[level]);
@@ -42,7 +42,7 @@ btnSave.addEventListener("click", () => {
         showError("Selecciona todos los colores", 5000);
         return
     }
-    localStorage.setItem('mind-colors', JSON.stringify(colorSelectedList));
+    sessionStorage.setItem('mind-colors', JSON.stringify(colorSelectedList));
     window.location.href = './board.html';
 });
 //error

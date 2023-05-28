@@ -1,8 +1,8 @@
 
 //datos del jugador - nombre y avatar / level/ colores
-let player = JSON.parse(localStorage.getItem('mind-player'));
-let level = parseInt(localStorage.getItem('mind-level'));
-let colorballs = JSON.parse(localStorage.getItem('mind-colors'));
+let player = JSON.parse(sessionStorage.getItem('mind-player'));
+let level = parseInt(sessionStorage.getItem('mind-level'));
+let colorballs = JSON.parse(sessionStorage.getItem('mind-colors'));
 
 //elementos DOM
 const containerPlayer = document.getElementById('color-balls-container-player');
@@ -46,7 +46,7 @@ const getSecretColorList = (colorList) => {
 
 //guardado de la jugada ganadora en el local storage
 const secretColorsList = getSecretColorList(colorballs);
-localStorage.setItem('winner-colors', JSON.stringify(secretColorsList));
+sessionStorage.setItem('winner-colors', JSON.stringify(secretColorsList));
 
 //Array para la filas y columnas, permite el desbloqueo y bloqueo de las filas
 //al realizar las jugadas y validar

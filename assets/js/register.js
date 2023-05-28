@@ -1,5 +1,5 @@
 
-let player = JSON.parse(localStorage.getItem('mind-player'));
+let player = JSON.parse(sessionStorage.getItem('mind-player'));
 
 if (player) { // quiero que me conserve los datos del jugador al recargar la pagina
     const avatarImage = document.querySelector('.avatar-image');
@@ -37,10 +37,10 @@ dropdownImages.forEach((imgAvatar) => {
 btnSave.addEventListener("click", () => {
     const txtUsername = document.querySelector('.user-name');
     player.username = txtUsername.value;
-    localStorage.setItem('mind-player', JSON.stringify(player));
+    sessionStorage.setItem('mind-player', JSON.stringify(player));
 
     if (player.avatar !== '' && player.username !== '') {
-        localStorage.setItem('mind-player', JSON.stringify(player));
+        sessionStorage.setItem('mind-player', JSON.stringify(player));
         window.location.href = './level.html';
     } else {
         if (player.avatar === '') {

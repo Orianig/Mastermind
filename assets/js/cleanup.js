@@ -1,4 +1,4 @@
 
-window.addEventListener('beforeunload', function() {
-    localStorage.clear();
-  });
+window.addEventListener('beforeunload', function () {
+  sessionStorage.clear();
+});

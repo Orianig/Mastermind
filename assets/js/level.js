@@ -1,4 +1,4 @@
-let level = parseInt(localStorage.getItem('mind-level'));
+let level = parseInt(sessionStorage.getItem('mind-level'));
 
 // Selectores DOM
 const level1 = document.getElementById('level-1');
@@ -42,6 +42,6 @@ level3.addEventListener("click", () => {
 });
 //guardado de la eleccion y paso a la siguiente pagina
 btnSave.addEventListener("click", () => {
-    localStorage.setItem('mind-level', level);
+    sessionStorage.setItem('mind-level', level);
     window.location.href = './color.html';
 });

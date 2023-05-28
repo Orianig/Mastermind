@@ -1,7 +1,7 @@
 
 //datos del jugador - nombre y avatar / level/ colores
-let level = parseInt(localStorage.getItem('mind-level'));
-let colorballs = JSON.parse(localStorage.getItem('winner-colors'));
+let level = parseInt(sessionStorage.getItem('mind-level'));
+let colorballs = JSON.parse(sessionStorage.getItem('winner-colors'));
 
 //elementos DOM
 const containerWinnerBalls = document.querySelector('.ballsWinnerColors');

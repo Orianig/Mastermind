@@ -35,5 +35,10 @@ validationPlayAgain.addEventListener("click", () => {
 
 const validationReturnHome = document.getElementById('btnReturnHome');
 validationReturnHome.addEventListener("click", () => {
-    window.location.href = '../index.html';
+    window.location.href = './home.html';
+});
+
+const validationPlaySame = document.getElementById('btnPlaySame');
+validationPlaySame.addEventListener("click", () => {
+    window.location.href = './board.html';
 });

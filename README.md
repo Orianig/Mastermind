@@ -24,7 +24,7 @@ Para este proyecto se ha generado un tablero dinamico que reacciona a la eleccio
 7. Utiliza las pistas para ajustar tu estrategia y realizar nuevas combinaciones.
 8. Repite los pasos 4-7 hasta que adivines la combinación correcta o alcances el número máximo de intentos permitidos.
 
-![Instrucciones de juego personalizadas](https://github.com/Orianig/Mastermind/blob/main/assets/img/instrucciones-web.PNG)
+![Instrucciones de juego personalizadas](https://github.com/Orianig/Mastermind/blob/main/assets/img/instructions-web-design.jpg )
 
 ## Estructura del proyecto
 El proyecto consta de varias paginas principales necesarias para el desenvolvimiento del juego, estos son:
